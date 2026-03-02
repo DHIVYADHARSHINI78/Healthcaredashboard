@@ -31,12 +31,12 @@
               Patients
             </Link>
 
-            <Link className="btn btn-warning me-2" to="/performance-test">
+            <Link className="btn btn-light me-2" to="/performance-test">
               Performance
             </Link>
 
             <button
-              className="btn btn-danger"
+              className="btn btn-light"
               onClick={handleLogout}
             >
               Logout

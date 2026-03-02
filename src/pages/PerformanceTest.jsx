@@ -4,23 +4,22 @@ import api from "../services/api";
 
 const PerformanceTest = () => {
 
-  // state must be declared
+ 
   const [count, setCount] = useState(0);
 
-  //  Normal Function
+  
   const fetchPatients = () => {
     console.log("Normal Function Called");
   };
 
-  // calling normal function
+ 
   fetchPatients();
 
-  // ✅ useEffect runs once
+
   useEffect(() => {
     console.log("useEffect Called");
   }, []);
 
-  // ✅ Correct API Call
   useEffect(() => {
     api.get("/users")
       .then(() => console.log("API Called Once"));
