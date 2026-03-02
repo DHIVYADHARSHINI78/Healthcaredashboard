@@ -3,23 +3,20 @@ import Navbar from "../components/Navbar";
 import api from "../services/api";
 
 const PerformanceTest = () => {
-
- 
+  
   const [count, setCount] = useState(0);
 
-  
+ 
   const fetchPatients = () => {
     console.log("Normal Function Called");
   };
-
- 
-  fetchPatients();
 
 
   useEffect(() => {
     console.log("useEffect Called");
   }, []);
 
+  
   useEffect(() => {
     api.get("/users")
       .then(() => console.log("API Called Once"));
@@ -34,7 +31,10 @@ const PerformanceTest = () => {
 
         <button
           className="btn btn-danger mt-3"
-          onClick={() => setCount(count + 1)}
+          onClick={() => {
+            fetchPatients();
+            setCount(count + 1);
+          }}
         >
           Re-render {count}
         </button>
